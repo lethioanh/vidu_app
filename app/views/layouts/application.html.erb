@@ -11,9 +11,13 @@
   <body>
     <%= render "layouts/header"%>
     <div class="container">
+      <% flash.each do |mes_type, mes|%>
+      <div class="alert alert-<%= mes_type%>"> <%= mes %></div>
+      <%end%>
       <%= yield %>
     </div>
     <hr />
     <%= render 'layouts/footer'%>
+    <%= debug(params) if Rails.env.development?%>
   </body>
 </html>
