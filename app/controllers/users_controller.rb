@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     if @user.save
       #handle a successful save
       log_in @user
-      flash[:success] = " Welcome to the Sample App"
-      redirect_to @user
+      flash[:success] = "Bạn đã đăng kí tài khoản thành công, mời đăng nhập"
+      redirect_to login_path
     else
       render 'new'
     end
