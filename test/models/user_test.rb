@@ -24,6 +24,11 @@ class UserTest < ActiveSupport::TestCase
     @user.email = " "
     assert_not @user.valid?
   end
+
+  test "authenticated? should return false for a user wuth nil digest" do
+      assert_not @user.authenticated?('')
+  end
+
   #test user's name long
   test "name should not be too long" do
     @user.name = "a" * 51
