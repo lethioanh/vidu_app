@@ -22,5 +22,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect! # dieu huong chinh xac den trang muc tieu
     assert_template 'users/show'
+    assert is_logged_in?
   end
 end
